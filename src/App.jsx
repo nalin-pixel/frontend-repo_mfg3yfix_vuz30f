@@ -1,28 +1,31 @@
-import { useState } from 'react'
+import Header from './components/Header';
+import Hero from './components/Hero';
+import SocialProof from './components/SocialProof';
+import KeyMetrics from './components/KeyMetrics';
+import Services from './components/Services';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-lg">
-        <h1 className="text-3xl font-bold text-gray-800 mb-4">
-          Vibe Coding Platform
-        </h1>
-        <p className="text-gray-600 mb-6">
-          Your AI-powered development environment
-        </p>
-        <div className="text-center">
-          <button
-            onClick={() => setCount(count + 1)}
-            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
-          >
-            Count is {count}
-          </button>
+    <div className="font-inter bg-white text-neutral-900">
+      <Header />
+      <main className="pt-20">
+        <Hero />
+        <SocialProof />
+        <KeyMetrics />
+        <Services />
+      </main>
+      <footer className="border-t border-black/5 bg-white">
+        <div className="mx-auto max-w-7xl px-6 py-10 flex items-center justify-between text-sm text-neutral-600">
+          <p>© {new Date().getFullYear()} Studio Arc. All rights reserved.</p>
+          <nav className="flex items-center gap-6">
+            <a href="#about" className="hover:text-neutral-900">About</a>
+            <a href="#services" className="hover:text-neutral-900">Services</a>
+            <a href="#contact" className="hover:text-neutral-900">Contact</a>
+          </nav>
         </div>
-      </div>
+      </footer>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
